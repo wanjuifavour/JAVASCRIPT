@@ -1,0 +1,9 @@
+function allPropertyNames(obj) {
+    let props = [];
+    for (let prop in obj) {
+        props.push(prop);
+    }
+    return props;
+}
+
+console.log(allPropertyNames(student));

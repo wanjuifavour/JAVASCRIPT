@@ -1,0 +1,25 @@
+function invertObject(obj) {
+    if (typeof obj !== 'object' || obj === null) {
+        throw new Error('Input must be an object');
+    }
+
+    return Object.entries(obj).reduce((acc, [key, value]) => {
+        if (typeof value === 'object' && value !== null) {
+            console.warn(`Skipping non-primitive value for key "${key}"`);
+            return acc;
+        }
+        if (value in acc) {
+            console.warn(`Duplicate value "${value}" found, overwriting previous entry`);
+        }
+        acc[value] = key;
+        return acc;
+    }, {});
+}
+
+const student = {
+    name: "John",
+    age: 20,
+    grade: "A"
+};
+
+console.log(invertObject(student));
