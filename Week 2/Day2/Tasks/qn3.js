@@ -3,7 +3,11 @@ function combineArrays(...arrays){
     arrays.forEach(array => {
         combinedArray = [...combinedArray, ...array];
     });
-    return combinedArray;
+    let revisedArray = combinedArray.filter((value, index) => {
+        return combinedArray.indexOf(value) === index;
+    });
+    
+    return revisedArray;
 }
 const arr1 = [1, 2, 3];
 const arr2 = [3, 4, 5];
