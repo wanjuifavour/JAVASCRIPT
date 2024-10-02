@@ -10,8 +10,29 @@
 
 <body>
     <h1>Upcoming Events</h1>
+
+    <div class="filters">
+        <label for="price-filter">Filter by Price:</label>
+        <select id="price-filter">
+            <option value="all">All</option>
+            <option value="low">Low (Below Ksh 30)</option>
+            <option value="high">High (Above Ksh 30)</option>
+        </select>
+
+        <label for="location-filter">Filter by Location:</label>
+        <input type="text" id="location-filter" placeholder="Enter location..." />
+
+        <button id="filter-btn">Apply Filters</button>
+
+        <button id="sort-price">Sort by Price</button>
+        <button id="sort-date">Sort by Date</button>
+    </div>
+
     <div id="events-container" class="events-container"></div>
     <div id="error-message" class="error"></div>
+
+    <h1>Your Favorite Events</h1>
+    <div id="favorites-container" class="events-container"></div>
 
     <script src="scripts.js"></script>
 </body>
